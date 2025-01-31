@@ -67,3 +67,16 @@
 .sendButton:hover {
     background-color: #087830;
 }
+
+.creationButton {
+    width:100%;
+    border-radius:0;
+    padding:5px;
+    background-color: #014421;
+    color:#fff;
+    border:none;
+}
+
+.creationButton:hover {
+    background-color: #087830;
+}

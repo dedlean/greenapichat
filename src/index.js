@@ -6,7 +6,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div style={{
     backgroundColor:"#333",
-    height:"100vh",
+    height:"98vh",
     color: "white",
     fontFamily:'sans-serif'
   }}><App/></div>

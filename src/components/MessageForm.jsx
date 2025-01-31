@@ -1,10 +1,13 @@
 import React from 'react'
 
 const MessageForm = () => {
-  
-    
+    const sendMsg = (e) => {
+        e.preventDefault();
+        document.querySelector('.messageInput').value = ''
+    }
+
     return (
-    <div style={{
+    <form style={{
         display: "flex",
         width:"100%",
         height:'30px',
@@ -12,8 +15,8 @@ const MessageForm = () => {
         bottom:'0px'
     }}>
         <input type="text" className="messageInput"/>
-        <button className="sendButton">Send</button>
-    </div>
+        <button className="sendButton" onClick={sendMsg}>Send</button>
+    </form>
   )
 }
 

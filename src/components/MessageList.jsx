@@ -5,9 +5,21 @@ const MessageList = () => {
   return (
     <div style={{
         height:'100%',
-        paddingLeft:'50px'
-        
+        paddingLeft:'50px',
+        overflowY:'auto'
     }}>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
+        <Message text="prekl" sender="Adam"/>
         <Message text="prekl" sender="Adam"/>
     </div>
   )
