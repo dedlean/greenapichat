@@ -10,7 +10,7 @@ const MessageList = (props) => {
     }}>
         {props.messages.map((message) => {
           if(message!=null||message!==undefined){
-          return <Message text={message} sender={props.sender}/>}
+          return <Message text={message.text} sender={message.sender}/>}
         })}
     </div>
   )

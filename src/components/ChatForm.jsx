@@ -6,6 +6,28 @@ import MessageForm from './MessageForm'
 const ChatForm = (props) => {
   const activeChat = props.chats.find((chat) => chat.active)
 
+   async function sendMessage (messageText) {
+    let response = await fetch(('https://1103.api.green-api.com/waInstance'+props.user.idInstance+'/sendMessage/'+props.user.apiTokenInstance), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chatId: activeChat.userID,
+        message: messageText
+      })
+    })
+    const json = await response.json();
+    if(response.ok) {
+      props.setChats(props.chats.map((chat) => {
+        if(chat.active) {
+          return {...chat, messages: [...chat.messages, {text:messageText, sender:'You'}]};
+        }
+        return chat;
+      }))
+    }
+  }
+
   if(!activeChat) {
     return <div>
       No chat
@@ -20,8 +42,8 @@ const ChatForm = (props) => {
         width:'100%'
     }}>
         <ChatTitle title={activeChat.username}/>
-        <MessageList messages={activeChat.messages} sender={activeChat.username}/>
-        <MessageForm/>
+        <MessageList messages={activeChat.messages}/>
+        <MessageForm sendMessage={sendMessage}/>
     </div>
   )
 }

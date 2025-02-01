@@ -8,7 +8,7 @@ function App() {
   const [user, setUser] = useState({idInstance: '', apiTokenInstance: ''});
   const [logged, setLogged] = useState(false);
   const changeLogged = () => {setLogged(!logged);}
-  const [chats, setChats] = useState([{username: 'Adam', messages: ['prekl', 'prekl', 'prekl', 'prekl', 'prekl', 'prekl'], active:true, userID:'790309540@c.us'}]);
+  const [chats, setChats] = useState([{username: 'Adam', messages: [{text: 'prekl', sender: 'Adam'}, {text: 'prekl', sender: 'Adam'}, {text: 'prekl', sender: 'Adam'}, {text: 'prekl', sender: 'Adam'}, {text: 'prekl', sender: 'Adam'}, {text: 'prekl', sender: 'Adam'}], active:true, userID:'790309540@c.us'}]);
 
   const addUser = (number, username) => {
     setChats([...chats, {username: username, messages: [], userID: (number+"@c.us"), active:false}]);
@@ -31,7 +31,7 @@ function App() {
         height:'100%'
       }}>
         <UsersList changeChat={changeChat} users={chats} addUser={addUser}/>
-        <ChatForm chats={chats} style={{
+        <ChatForm user={user} setChats={setChats} chats={chats} style={{
           height:'100%'
         }}/>
       </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 
-const MessageForm = () => {
+const MessageForm = (props) => {
     const sendMsg = (e) => {
         e.preventDefault();
+        props.sendMessage(document.querySelector('.messageInput').value);
         document.querySelector('.messageInput').value = ''
     }
 
