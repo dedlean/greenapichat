@@ -7,7 +7,7 @@ const ChatForm = (props) => {
   const activeChat = props.chats.find((chat) => chat.active)
 
    async function sendMessage (messageText) {
-    let response = await fetch(('https://1103.api.green-api.com/waInstance'+props.user.idInstance+'/sendMessage/'+props.user.apiTokenInstance), {
+    let response = await fetch((props.user.apiURL+'/waInstance'+props.user.idInstance+'/sendMessage/'+props.user.apiTokenInstance), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
