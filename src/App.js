@@ -8,10 +8,20 @@ function App() {
   const [user, setUser] = useState({idInstance: '', apiTokenInstance: ''});
   const [logged, setLogged] = useState(false);
   const changeLogged = () => {setLogged(!logged);}
-  const [chats, setChats] = useState([{username: 'Adam', messages: ['prekl', 'prekl', 'prekl', 'prekl', 'prekl', 'prekl']}]);
+  const [chats, setChats] = useState([{username: 'Adam', messages: ['prekl', 'prekl', 'prekl', 'prekl', 'prekl', 'prekl'], active:true, userID:'790309540@c.us'}]);
 
   const addUser = (number, username) => {
-    setChats([...chats, {username: username, messages: [], userID: (number+"@c.us")}]);
+    setChats([...chats, {username: username, messages: [], userID: (number+"@c.us"), active:false}]);
+  }
+
+  const changeChat = (userID) => {
+    setChats(chats.map((chat) => {
+      if(chat.userID === userID) {
+        return {...chat, active: true};
+      } else {
+        return {...chat, active: false};
+      }
+    }))
   }
 
   return (
@@ -20,8 +30,8 @@ function App() {
         display:'flex',
         height:'100%'
       }}>
-        <UsersList users={chats} addUser={addUser}/>
-        <ChatForm style={{
+        <UsersList changeChat={changeChat} users={chats} addUser={addUser}/>
+        <ChatForm chats={chats} style={{
           height:'100%'
         }}/>
       </div>

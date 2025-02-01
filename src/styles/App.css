@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .bg-wrap {
     background-color: #333;
 }
@@ -79,4 +83,17 @@
 
 .creationButton:hover {
     background-color: #087830;
+}
+
+.chatButton {
+    padding:30px;
+    border-radius:none;
+    background-color:#333;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+}
+
+.chatButton:hover {
+    background-color: #555;
 }

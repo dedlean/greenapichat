@@ -1,26 +1,17 @@
 import React from 'react'
 import Message from './Message'
 
-const MessageList = () => {
+const MessageList = (props) => {
   return (
     <div style={{
         height:'100%',
         paddingLeft:'50px',
         overflowY:'auto'
     }}>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
-        <Message text="prekl" sender="Adam"/>
+        {props.messages.map((message) => {
+          if(message!=null||message!==undefined){
+          return <Message text={message} sender={props.sender}/>}
+        })}
     </div>
   )
 }
