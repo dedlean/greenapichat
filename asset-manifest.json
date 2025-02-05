@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/greenapichat/static/css/main.544cdb55.css",
+    "main.js": "/greenapichat/static/js/main.a63fa144.js",
+    "index.html": "/greenapichat/index.html",
+    "main.544cdb55.css.map": "/greenapichat/static/css/main.544cdb55.css.map",
+    "main.a63fa144.js.map": "/greenapichat/static/js/main.a63fa144.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.544cdb55.css",
+    "static/js/main.a63fa144.js"
+  ]
+}
